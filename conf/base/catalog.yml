@@ -3,9 +3,13 @@
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://kedro.readthedocs.io/en/stable/data/data_catalog.html
 
-Research data:
+Research data Mongolian:
   type: pandas.CSVDataSet
-  filepath: data/02_intermediate/Research data.csv
+  filepath: data/03_primary/Research data Mongolian.csv
+
+Research data English:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/Research data English.csv
 
 Patient:
   type: pandas.ExcelDataSet
