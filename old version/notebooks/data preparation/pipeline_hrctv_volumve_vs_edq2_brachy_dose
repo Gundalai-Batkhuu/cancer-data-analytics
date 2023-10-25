@@ -1,0 +1,149 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "#Importing packages\n",
+    "import pandas as pd\n",
+    "import matplotlib.pyplot as plt\n",
+    "import seaborn as sns\n",
+    "import numpy as np\n",
+    "sns.set_style('whitegrid')\n",
+    "%matplotlib inline\n",
+    "pd.set_option('display.max_rows', None)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "outputs": [
+    {
+     "data": {
+      "text/plain": "    id  hrctv_volume  eqd2_hrbrachy_dose\n0  101          33.0                35.8\n1  102          26.5                39.1\n2  103          42.1                36.7\n3  104          35.0                35.8\n4  105          20.7                37.7",
+      "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>id</th>\n      <th>hrctv_volume</th>\n      <th>eqd2_hrbrachy_dose</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>101</td>\n      <td>33.0</td>\n      <td>35.8</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>102</td>\n      <td>26.5</td>\n      <td>39.1</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>103</td>\n      <td>42.1</td>\n      <td>36.7</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>104</td>\n      <td>35.0</td>\n      <td>35.8</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>105</td>\n      <td>20.7</td>\n      <td>37.7</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#Importing data.\n",
+    "hrctv_volume_vs_eqd2_brachy_dose=pd.read_csv(r\"C:\\Users\\gdbt0\\OneDrive\\Documents\\GitHub\\Projects\\cancer\\data\\interim\\brachytherapy.csv\",usecols=['id','hrctv_volume','eqd2_hrbrachy_dose'])\n",
+    "\n",
+    "hrctv_volume_vs_eqd2_brachy_dose.head()"
+   ],
+   "metadata": {
+    "collapsed": false,
+    "pycharm": {
+     "name": "#%%\n"
+    }
+   }
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'pandas.core.frame.DataFrame'>\n",
+      "RangeIndex: 98 entries, 0 to 97\n",
+      "Data columns (total 3 columns):\n",
+      " #   Column              Non-Null Count  Dtype  \n",
+      "---  ------              --------------  -----  \n",
+      " 0   id                  98 non-null     int64  \n",
+      " 1   hrctv_volume        85 non-null     float64\n",
+      " 2   eqd2_hrbrachy_dose  85 non-null     float64\n",
+      "dtypes: float64(2), int64(1)\n",
+      "memory usage: 2.4 KB\n"
+     ]
+    }
+   ],
+   "source": [
+    "hrctv_volume_vs_eqd2_brachy_dose.info()"
+   ],
+   "metadata": {
+    "collapsed": false,
+    "pycharm": {
+     "name": "#%%\n"
+    }
+   }
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'pandas.core.frame.DataFrame'>\n",
+      "Int64Index: 85 entries, 0 to 84\n",
+      "Data columns (total 3 columns):\n",
+      " #   Column              Non-Null Count  Dtype  \n",
+      "---  ------              --------------  -----  \n",
+      " 0   id                  85 non-null     int64  \n",
+      " 1   hrctv_volume        85 non-null     float64\n",
+      " 2   eqd2_hrbrachy_dose  85 non-null     float64\n",
+      "dtypes: float64(2), int64(1)\n",
+      "memory usage: 2.7 KB\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Deleting rows with null values\n",
+    "hrctv_volume_vs_eqd2_brachy_dose.dropna(axis=0,inplace=True)\n",
+    "hrctv_volume_vs_eqd2_brachy_dose.info()"
+   ],
+   "metadata": {
+    "collapsed": false,
+    "pycharm": {
+     "name": "#%%\n"
+    }
+   }
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "outputs": [],
+   "source": [
+    "#Exporting as a csv file to processed folder\n",
+    "hrctv_volume_vs_eqd2_brachy_dose.to_csv(r\"C:\\Users\\gdbt0\\OneDrive\\Documents\\GitHub\\Projects\\cancer\\data\\processed\\hrctv_volume_vs_eqd2_brachy_dose.csv\",index=False)"
+   ],
+   "metadata": {
+    "collapsed": false,
+    "pycharm": {
+     "name": "#%%\n"
+    }
+   }
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "name": "pycharm-85d82135",
+   "language": "python",
+   "display_name": "PyCharm (cancer)"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 2
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython2",
+   "version": "2.7.6"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}

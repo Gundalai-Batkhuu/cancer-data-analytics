@@ -1,0 +1,103 @@
+name,previous_name,data_type,group_name,subgroup_name,description
+id,RID,int,Patient,,Patient's unique identification number. The first patient starts with 100. 
+card_no,CID,string,Patient,,Patient's card identifiation number.
+name,Name,string,Patient,,Patient's first and last name.
+age,Age,int,Patient,,Patient's age. 
+reg_no,CR,string,Patient,,Patient's state registration identification number. 
+address,Had,string,Patient,,Patient's home address
+notes,Тайлбар,,Patient,,
+perfor_status,PS,int,Diagnosis ,,perfor.status WHO (0-2)
+has_concom,CD,boolean,Diagnosis ,,"Concom.disease (тийм, үгүй)"
+concom_name,ICD,string,Diagnosis ,,info concom.disease (өвчний нэр)
+T,T,string,Diagnosis ,,
+N,N,int,Diagnosis ,,
+M ,M,int,Diagnosis ,,
+figo,FIGO,string,Diagnosis ,,UICC/FIGO (2018)
+PT ,PT,int,Diagnosis ,,SCC (NOS):1 Adenosq :2 Adeno:3 
+tumor_size,TS,string,Diagnosis ,,tumor Size   Дунд (4-6см) Том (6см)
+growth_type,GT,int,Diagnosis ,,"Growth type - Ургалтын хэлбэр Энд:1, Экзо:2, Холм:3,"
+VI,VI,int,Diagnosis ,,"Үтрээний нэвчилт доод 1/3:1, бусад:0"
+PaR,PaR,string,Diagnosis ,,
+ PaL,PaL,string,Diagnosis ,,
+UI,UI,boolean,Diagnosis ,,Умайн нэвчилт 
+ct_abdomen,CTa,boolean,Diagnosis ,,CT abdomen
+ct_pelvic,CTp,boolean,Diagnosis ,,CT pelvic
+mri_pelvic,MRP,boolean,Diagnosis ,,MRI pelvic
+start_date,TSd,date,External beam radiotherapy,,Start date of treatment.
+end_date,TCd,date,External beam radiotherapy,,End date of treatment.
+total_days,TTD,int,External beam radiotherapy,,treatment total time
+pelvic_total_dose,PTD ,,External beam radiotherapy,Бүтэн аарцагны тун (Грей),pelvic total dose
+Pfr,PFr,,External beam radiotherapy,Бүтэн аарцагны тун (Грей),
+Тун,Тун,,External beam radiotherapy,Бүтэн аарцагны тун (Грей),
+Has,Has,,External beam radiotherapy,Бүтэн аарцагны тун (Грей),
+Column1,,,External beam radiotherapy,Бүтэн аарцагны тун (Грей),
+central_closed_dose,Cdose,,External beam radiotherapy,Төвийн хаалттай тун (Гр),
+Cfr,CFr,,External beam radiotherapy,Төвийн хаалттай тун (Гр),
+boost_dose,BDose,,External beam radiotherapy,Boost тун (Гр),
+Bfr,Bfr,,External beam radiotherapy,Boost тун (Гр),
+last_brachy_date,LBD ,,Brachytherapy,,last brachy day
+applicator_name,Aplc ,,Brachytherapy,,applicator name 
+total_apoint_left,TADL ,,Brachytherapy,,total A point left 
+total_apoint_right,TADR ,,Brachytherapy,,total A point dose right 
+icru_rectum,ICRUR ,,Brachytherapy,,ICRU rectum
+icru_bladder,ICRUB ,,Brachytherapy,,ICRU bladder
+hrctv_volume,HR-CTVV,,Brachytherapy,,HR-CTV volume
+eqd2_bladder,EQD2B,,Brachytherapy,,EQD2 bladder
+eqd2_rectum,EQD2R,,Brachytherapy,,EQD2 rectum
+eqd2_sigmoid,EQD2S,,Brachytherapy,,EQD2 sigmoid
+eqd2_hrbrachy_dose,EQD2HRB – EQD2,,Brachytherapy,,EQD2 HR-brachytherapy dose
+eqd2_total_dose,EQD2TOT – EQD2,,Brachytherapy,,EQD2 total (EBRT+brachy)
+chemo_startdate,ChSD,,Brachytherapy,,chemo start day
+chemo_dose,Dm2,,Chemotherapy,,Dose m2
+chemo_totaldose,DTB,,Chemotherapy,,Dose total body
+chemo_numcycles,NCC,,Chemotherapy,,Nomber of chemo cycles
+interrupt_reason,RFI,,Chemotherapy,,reason for interruption
+deleted,m2,,Chemotherapy,,
+deleted,body,,Chemotherapy,,
+evaluation_date,EVD,,Acute toxicity,,Acute evaluation day 
+WBC,WBC,,Acute toxicity,,
+Neu,Neu,,Acute toxicity,,
+Hb,Hb,,Acute toxicity,,
+Plt,Plt,,Acute toxicity,,
+GCSF,GCSF,,Acute toxicity,,
+LGI,LGI,,Acute toxicity,,
+Bld,Bld,,Acute toxicity,,
+Skn,Skn,,Acute toxicity,,
+N/V,N/V,,Acute toxicity,,
+Ftg,Ftg,,Acute toxicity,,
+WLs,WLs,,Acute toxicity,,
+Cre,Cre,,Acute toxicity,,
+early_response_status,EarlR,,Response status,,early response
+early_response_date,EvDER,,Response status,,Evualation date early response
+late_response_status,LatR,,Response status,,Late response
+late_response_date,EvDLR,,Response status,,eval date late response
+followup_timing,TFU,,Response status,,Timing follow up
+rect_sig_grade,GrRS,,Late morbidity,,grade rectum/ sigmoid 
+rectum_eval_date,EvDR,,Late morbidity,,eval date rectum
+rectum_duration,duration months,,Late morbidity,,
+bladder_grade,grade (max),,Late morbidity,,
+bladder_eval_date,date,,Late morbidity,,
+bladder_duration,duration months,,Late morbidity,,
+others_grade,grd,,Late morbidity,,
+others_eval_date,date,,Late morbidity,,
+others_duration,duration months,,Late morbidity,,
+others_site,site,,Late morbidity,,
+max_response,maximum response,,Late morbidity,,
+locfail_event,evnt,,Disease status,Local failure,
+locfail_date,date,,Disease status,Local failure,
+locfail_duration,"duration
+months",,Disease status,Local failure,
+locfail_site,recurrent site,,Disease status,Local failure,
+distmeta_event,evnt,,Disease status,Distant meta,
+distmeta_date,date,,Disease status,Distant meta,
+distmeta_duration,"duration
+months",,Disease status,Distant meta,
+distmeta_site,resurrent site,,Disease status,Distant meta,
+progress_event,evnt,,Disease status,Progression,
+progress_duration,"duration
+months",,Disease status,Progression,
+addit_treatment,Adnl Trtmnt,,Disease status,,
+A/D,A/D,,Disease status,Death report,
+death_date,date,,Disease status,Death report,
+death_duration,duration,,Disease status,Death report,
+death_cause,cause of,,Disease status,Death report,
